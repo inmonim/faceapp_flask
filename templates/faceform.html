@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Multi Step Form | CodingNepal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/style.css" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>연예인 판독기 mk.1</header>
+
+      <div class="form-outer">
+        <form action="/faceapp" method="post" enctype="multipart/form-data">
+          <div class="page">
+            <div class="wrapper">
+              <div class="image">
+                <img src="" alt="" />
+              </div>
+              <div class="content">
+                <div class="icon">
+                  <i class="fas fa-cloud-upload-alt"></i>
+                </div>
+                <div class="text">No file chosen, yet!</div>
+              </div>
+              <div id="cancel-btn">
+                <i class="fas fa-times"></i>
+              </div>
+              <div class="file-name">File name here</div>
+            </div>
+            <div class="field">
+              <button type="button" onclick="defaultBtnActive()" class="firstNext">select</button>
+              <input required class="form-control form-control-lg" id="default-btn" name="facefile" type="file" hidden/>
+            </div>
+            <div class="field">
+              <button class="firstNext next">Next</button>
+            </div>
+          </div>
+
+          <script type="text/javascript" charset="utf-8">
+            const wrapper = document.querySelector(".wrapper");
+            const fileName = document.querySelector(".file-name");
+            const defaultBtn = document.querySelector("#default-btn");
+            const customBtn = document.querySelector("#custom-btn");
+            const cancelBtn = document.querySelector("#cancel-btn i");
+            const img = document.querySelector("img");
+            let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
+            function defaultBtnActive() {
+              defaultBtn.click();
+            }
+            defaultBtn.addEventListener("change", function () {
+              const file = this.files[0];
+              if (file) {
+                const reader = new FileReader();
+                reader.onload = function () {
+                  const result = reader.result;
+                  img.src = result;
+                  wrapper.classList.add("active");
+                };
+                cancelBtn.addEventListener("click", function () {
+                  img.src = "";
+                  wrapper.classList.remove("active");
+                });
+                reader.readAsDataURL(file);
+              }
+              if (this.value) {
+                let valueStore = this.value.match(regExp);
+                fileName.textContent = "";
+              }
+            });
+          </script>
+          </div>
+        </form>
+      </div>
+    <script src="../static/js/script.js"></script>
+  </body>
+</html>
