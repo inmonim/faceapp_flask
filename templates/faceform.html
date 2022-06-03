@@ -6,20 +6,21 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Multi Step Form | CodingNepal</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet"> 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="../static/css/style.css" />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </head>
   <body>
     <div class="container">
-      <header>연예인 판독기 mk.1</header>
+      <header>연예인 판독기</header>
 
       <div class="form-outer">
         <form action="/faceapp" method="post" enctype="multipart/form-data">
           <div class="page">
             <div class="wrapper">
               <div class="image">
-                <img src="" alt="" />
+                <img src="/static/images/default.webp" alt="" />
               </div>
               <div class="content">
                 <div class="icon">
@@ -33,7 +34,7 @@
               <div class="file-name">File name here</div>
             </div>
             <div class="field">
-              <button type="button" onclick="defaultBtnActive()" class="firstNext">select</button>
+              <button required type="button" onclick="defaultBtnActive()" class="firstNext">select</button>
               <input required class="form-control form-control-lg" id="default-btn" name="facefile" type="file" hidden/>
             </div>
             <div class="field">
