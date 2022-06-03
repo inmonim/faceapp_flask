@@ -12,7 +12,7 @@
 2. templates 폴더 내의 'faceform.html' 페이지를 통해 사용자가 이미지를 업로드
 
 
-3. 이미지는 app.py에서 request되어 app.py에서 'get_prediction'함수 적용
+3. 이미지는 app.py에서 request받아 'get_prediction'함수 적용
 
     3-1. 함수의 자세한 사항은 'ai_logic.ipynb' 참조
 
