@@ -26,6 +26,8 @@
 
 1. app.py를 플라스크로 구동
 
+    1-1. GPU 사용 불가 시, 모델 load 함수 내 인자로 "map_location=torch.device('cpu')" 추가
+
 
 2. templates 폴더 내의 'faceform.html' 페이지를 통해 사용자가 이미지를 업로드
 
@@ -104,3 +106,10 @@ image 폴더 내의 사진 목록은 추가되었으나, 아직 모델 학습 �
 연예인 list = 542명 (김태원도 안 빼고 돌렸음)
 
 정상작동
+
+
+2022-06-08 / 17:25
+
+readme.txt에 모듈 설명 추가,
+
+app.py 에 GPU 사용 불가 시 구동 방법 
