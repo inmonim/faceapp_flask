@@ -6,9 +6,17 @@
 필요 사항
 
 
-1. cv2(opencv-python) modeul 필요
+1. cv2(opencv-python) # conda install opencv-python
 
-2. pytorch
+2. pytorch(torch==1.8.2, CUDA==10.2) # pip3 install torch==1.8.2 torchvision==0.9.2 torchaudio===0.8.2 --extra-index-url https://download.pytorch.org/whl/lts/1.8/cu102
+
+3. flask # pip install flask
+
+4. torchvision # pip install torchvision
+
+5. PIL # pip install PILLOW
+
+6. numpy # pip install numpy
 
 
 

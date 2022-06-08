@@ -14,7 +14,7 @@ import cv2
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-model = torch.load('./model.pt')
+model = torch.load('./model.pt')  # GPU 사용 불가 시, 함수 내에 인자로 map_location=torch.device('cpu') 추가
 model.eval()
 
 transforms_test = transforms.Compose([
